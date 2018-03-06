@@ -7,10 +7,6 @@ import {
     oneMeasureDataSource
 } from '../../tests/mocks';
 
-jest.mock('@gooddata/indigo-visualizations', () => ({
-    HeadlineTransformation
-}));
-
 import { Headline } from '../Headline';
 import { ICommonVisualizationProps } from '../base/VisualizationLoadingHOC';
 
@@ -22,6 +18,7 @@ describe('Headline', () => {
                 afterRender={jest.fn()}
                 drillableItems={[]}
                 resultSpec={{}}
+                HeadlineComponent={HeadlineTransformation}
             />
         ));
     };

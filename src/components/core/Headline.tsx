@@ -17,8 +17,16 @@ import {
 
 export { Requireable };
 
-export class HeadlineStateless extends React.Component<ICommonVisualizationProps & ILoadingInjectedProps> {
-    public static defaultProps: Partial<ICommonVisualizationProps> = commonDefaultprops;
+export interface IHeadlineStatelessProps {
+    HeadlineComponent?: React.ComponentClass<any>;
+}
+
+export class HeadlineStateless
+    extends React.Component<IHeadlineStatelessProps & ICommonVisualizationProps & ILoadingInjectedProps> {
+    public static defaultProps: Partial<ICommonVisualizationProps> = {
+        ...commonDefaultprops,
+        HeadlineComponent: HeadlineTransformation
+    };
 
     public static propTypes = HeadlinePropTypes;
 
@@ -37,7 +45,7 @@ export class HeadlineStateless extends React.Component<ICommonVisualizationProps
             <IntlWrapper locale={locale}>
                 <IntlTranslationsProvider>
                     {(props: ITranslationsComponentProps) => (
-                        <HeadlineTransformation
+                        <this.props.HeadlineComponent
                             onAfterRender={afterRender}
                             drillableItems={drillableItems}
                             executionRequest={{
