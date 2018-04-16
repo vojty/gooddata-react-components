@@ -34,6 +34,8 @@ import { Headline } from './components/Headline';
 import Chart, { ILegendConfig } from './components/visualizations/chart/Chart';
 import ChartTransformation from './components/visualizations/chart/ChartTransformation';
 
+import { ComponentClass } from 'react';
+
 /**
  * CoreComponents
  * A collection of BaseChart, Headline, Table
@@ -54,6 +56,7 @@ export {
     CatalogHelper,
     ChartType,
     ColumnChart,
+    ComponentClass,
     CoreComponents,
     ErrorCodes,
     ErrorStates,
