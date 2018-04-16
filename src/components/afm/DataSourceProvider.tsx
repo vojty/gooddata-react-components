@@ -48,6 +48,10 @@ function addDefaultDimensions(
     };
 }
 
+type ComponentClass<T> = React.ComponentClass<T>;
+
+export { ComponentClass };
+
 /**
  * dataSourceProvider
  * is a function that creates a dataSource and passes it to InnerComponent
@@ -58,10 +62,10 @@ function addDefaultDimensions(
  * @internal
  */
 export function dataSourceProvider<T>(
-    InnerComponent: React.ComponentClass<T & IDataSourceProviderInjectedProps>,
+    InnerComponent: ComponentClass<T & IDataSourceProviderInjectedProps>,
     generateDefaultDimensions: IGenerateDefaultDimensionsFunction,
     componentName: string
-): React.ComponentClass<IDataSourceProviderProps> {
+): ComponentClass<IDataSourceProviderProps> {
 
     return class WrappedComponent
         extends React.Component<IDataSourceProviderProps, IDataSourceProviderInjectedProps> {

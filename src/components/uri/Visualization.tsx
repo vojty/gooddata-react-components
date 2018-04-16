@@ -349,7 +349,7 @@ export class VisualizationWrapped
 
                     const mdObjectTotals = MdObjectHelper.getTotals(mdObject);
 
-                    const dateFilter = getDateFilter(filters);
+                    const dateFilter: ReturnType<typeof getDateFilter> = getDateFilter(filters);
                     const attributeFilters = getAttributeFilters(filters);
                     const afmWithFilters = AfmUtils.appendFilters(afm, attributeFilters, dateFilter);
 
