@@ -4,7 +4,10 @@ import {
     IDataSourceProviderProps
 } from './DataSourceProvider';
 
+import { ComponentClass } from 'react';
+
 export {
+    ComponentClass,
     IDataSourceProviderProps
 };
 
