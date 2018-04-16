@@ -12,7 +12,7 @@ function getJSONFromText(data: string): object {
     }
 }
 
-export function convertErrors(error: ApiResponseError) {
+export function convertErrors(error: ApiResponseError): never {
     const errorCode: number = error.response.status;
     switch (errorCode) {
         case 204:
